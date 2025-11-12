@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Civics Literacy Exam - Complete Study System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 3px solid #667eea;
+            overflow-x: auto;
+        }
+        
+        .nav-tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            background: transparent;
+            font-size: 1em;
+            font-weight: 600;
+            color: #555;
+            white-space: nowrap;
+        }
+        
+        .nav-tab:hover {
+            background: #e9ecef;
+        }
+        
+        .nav-tab.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .study-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .study-card h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .study-card h3 {
+            color: #2a5298;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .visual-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .infographic {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .info-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-item h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .info-item p {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .branch-diagram {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .branch {
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            padding: 20px;
+            width: 30%;
+            min-width: 250px;
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .branch h4 {
+            color: #1e3c72;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .branch ul {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .branch li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .branch li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            padding-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: -30px;
+            width: 3px;
+            background: #667eea;
+        }
+        
+        .timeline-item:after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-content h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        
+        .key-fact {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .key-fact strong {
+            color: #856404;
+        }
+        
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .flashcard {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 200px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .flashcard:hover {
+            transform: scale(1.05);
+        }
+        
+        .flashcard.known {
+            opacity: 0.4;
+            background: #d4edda;
+        }
+        
+        .flashcard.hidden {
+            display: none;
+        }
+        
+        .flashcard-front, .flashcard-back {
+            display: none;
+        }
+        
+        .flashcard-front.active, .flashcard-back.active {
+            display: block;
+        }
+        
+        .flashcard h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .flip-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.8em;
+            color: #999;
+        }
+        
+        .flashcard-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        
+        .flashcard-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        
+        .btn-know {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-know:hover {
+            background: #218838;
+        }
+        
+        .btn-dont-know {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-dont-know:hover {
+            background: #c82333;
+        }
+        
+        .flashcard-stats {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            padding: 10px 20px;
+        }
+        
+        .stat-item h4 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-item p {
+            color: #555;
+            font-size: 0.9em;
+        }
+        
+        .test-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .question {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .question h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+        
+        .options {
+            list-style: none;
+        }
+        
+        .options li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .options li:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        .options li.selected {
+            background: #667eea;
+            color: white;
+        }
+        
+        .options li.correct {
+            background: #28a745;
+            color: white;
+        }
+        
+        .options li.incorrect {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .score-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .score-display h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 30px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #28a745, #20c997);
+            height: 100%;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .start-test-card {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .start-test-card h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+        
+        .start-test-card p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .amendment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .amendment-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .amendment-card h5 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .amendment-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇺🇸 Florida Civics Literacy Exam</h1>
+            <p>Complete Study System - Master the FCLE with Visual Learning & Practice Tests</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('overview')">📚 Overview</button>
+            <button class="nav-tab" onclick="showSection('foundations')">🏛️ Foundations</button>
+            <button class="nav-tab" onclick="showSection('system')">⚖️ System of Govt</button>
+            <button class="nav-tab" onclick="showSection('rights')">✊ Rights & Duties</button>
+            <button class="nav-tab" onclick="showSection('history')">📜 American History</button>
+            <button class="nav-tab" onclick="showSection('flashcards')">🎴 Flashcards</button>
+            <button class="nav-tab" onclick="showSection('test')">📝 Practice Test</button>
+        </div>
+        
+        <div class="content">
+            <!-- OVERVIEW SECTION -->
+            <div id="overview" class="section active">
+                <div class="study-card">
+                    <h2>Welcome to Your FCLE Study System</h2>
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
+                        This comprehensive study tool is designed to help you pass the Florida Civics Literacy Exam 
+                        required for college graduation. Study the visual materials in each section, then test your 
+                        knowledge with our 80-question practice exam.
+                    </p>
+                    
+                    <div class="infographic">
+                        <div class="info-item">
+                            <h4>60%</h4>
+                            <p>Passing Score Required</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>80</h4>
+                            <p>Total Questions</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>4</h4>
+                            <p>Main Study Areas</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>100%</h4>
+                            <p>Your Success Rate!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="visual-box">
+                        <h3>📖 Study Strategy</h3>
+                        <ol style="line-height: 2; margin-left: 20px; font-size: 1.05em;">
+                            <li><strong>Start with Foundations</strong> - Learn the basic principles of American democracy</li>
+                            <li><strong>Understand the System</strong> - Master the three branches of government</li>
+                            <li><strong>Know Your Rights</strong> - Study the Bill of Rights and civic duties</li>
+                            <li><strong>Learn the History</strong> - Understand key events that shaped America</li>
+                            <li><strong>Use Flashcards</strong> - Reinforce your knowledge with active recall</li>
+                            <li><strong>Take Practice Tests</strong> - Test yourself with real exam questions</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="key-fact">
+                        <strong>💡 Pro Tip:</strong> The exam is based on the USCIS naturalization test. Focus on understanding 
+                        concepts rather than memorizing, and you'll do great!
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FOUNDATIONS SECTION -->
+            <div id="foundations" class="section">
+                <div class="study-card">
+                    <h2>🏛️ Foundations of American Democracy</h2>
+                    
+                    <div class="visual-box">
+                        <h3>Core Principles</h3>
+                        <div class="infographic">
+                            <div class="info-item">
+                                <h4>Popular Sovereignty</h4>
+                                <p>Government's power comes from the people</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Limited Government</h4>
+                                <p>Government has only powers given by the people</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Separation of Powers</h4>
+                                <p>Power divided among three branches</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Checks & Balances</h4>
+                                <p>Each branch limits the others</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Federalism</h4>
+                                <p>Power shared between national and state governments</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Individual Rights</h4>
+                                <p>Fundamental freedoms protected by law</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>📜 Founding Documents</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Declaration of Independence (1776)</h4>
+                                <p><strong>Purpose:</strong> Announced separation from Great Britain</p>
+                                <p><strong>Key Idea:</strong> "All men are created equal" with unalienable rights to life, liberty, and pursuit of happiness</p>
+                                <p><strong>Author:</strong> Thomas Jefferson</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Articles of Confederation (1781)</h4>
+                                <p><strong>Purpose:</strong> First constitution of the United States</p>
+                                <p><strong>Weakness:</strong> Created weak central government, no power to tax or regulate trade</p>
+                                <p><strong>Result:</strong> Replaced by the Constitution</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>The Constitution (1787)</h4>
+                                <p><strong>Purpose:</strong> Supreme law of the United States</p>
+                                <p><strong>Structure:</strong> Established three branches of government</p>
+                                <p><strong>Flexibility:</strong> Can be amended (27 amendments so far)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>The Bill of Rights (1791)</h4>
+                                <p><strong>Purpose:</strong> First 10 amendments protecting individual liberties</p>
+                                <p><strong>Key Rights:</strong> Speech, religion, press, assembly, bear arms, fair trial</p>
+                                <p><strong>Impact:</strong> Fundamental protections against government overreach</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-fact">
+                        <strong>🎯 Remember:</strong> The Constitution begins with "We the People" - emphasizing that 
+                        government power comes from citizens, not from kings or divine right.
+                    </div>
+                    
+                    <div class="visual-box">
+                        <h3>The Preamble - Six Goals of the Constitution</h3>
+                        <div class="infographic">
+                            <div class="info-item">
+                                <h4>Form a more perfect union</h4>
+                                <p>Create a better system than Articles of Confederation</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Establish justice</h4>
+                                <p>Create fair legal system</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Ensure domestic tranquility</h4>
+                                <p>Keep peace within the country</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Provide for common defense</h4>
+                                <p>Protect the nation</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Promote general welfare</h4>
+                                <p>Help people live well</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Secure liberty</h4>
+                                <p>Protect freedom for future generations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SYSTEM OF GOVERNMENT SECTION -->
+            <div id="system" class="section">
+                <div class="study-card">
+                    <h2>⚖️ System of Government</h2>
+                    
+                    <h3>Three Branches of Government</h3>
+                    <div class="branch-diagram">
+                        <div class="branch">
+                            <h4>🏛️ Legislative Branch</h4>
+                            <p style="margin: 15px 0;"><strong>Congress (makes laws)</strong></p>
+                            <ul>
+                                <li>Senate: 100 members (2 per state)</li>
+                                <li>House: 435 members (by population)</li>
+                                <li>6-year Senate terms</li>
+                                <li>2-year House terms</li>
+                                <li>Writes and passes laws</li>
+                                <li>Controls federal budget</li>
+                                <li>Declares war</li>
+                                <li>Can override veto (2/3 vote)</li>
+                            </ul>
+                        </div>
+                        <div class="branch">
+                            <h4>🏢 Executive Branch</h4>
+                            <p style="margin: 15px 0;"><strong>President (enforces laws)</strong></p>
+                            <ul>
+                                <li>President & Vice President</li>
+                                <li>4-year terms (max 2 terms)</li>
+                                <li>Must be 35+ years old</li>
+                                <li>Natural-born citizen</li>
+                                <li>Signs or vetoes bills</li>
+                                <li>Commander-in-Chief</li>
+                                <li>Appoints judges & cabinet</li>
+                                <li>Makes treaties</li>
+                            </ul>
+                        </div>
+                        <div class="branch">
+                            <h4>⚖️ Judicial Branch</h4>
+                            <p style="margin: 15px 0;"><strong>Supreme Court (interprets laws)</strong></p>
+                            <ul>
+                                <li>9 Supreme Court Justices</li>
+                                <li>Lifetime appointments</li>
+                                <li>Reviews laws & cases</li>
+                                <li>Judicial review power</li>
+                                <li>Final court of appeal</li>
+                                <li>Determines constitutionality</li>
+                                <li>No jury in Supreme Court</li>
+                                <li>Chief Justice leads</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="visual-box">
+                        <h3>Checks and Balances</h3>
+                        <div class="infographic">
+                            <div class="info-item">
+                                <h4>Congress checks President</h4>
+                                <p>Override veto • Approve appointments • Impeachment • Control budget</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>President checks Congress</h4>
+                                <p>Veto bills • Call special sessions • Recommend legislation</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Court checks Congress</h4>
+                                <p>Judicial review • Declare laws unconstitutional</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Court checks President</h4>
+                                <p>Declare executive actions unconstitutional • Review treaties</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Congress checks Courts</h4>
+                                <p>Approve judges • Impeach judges • Propose amendments</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>President checks Courts</h4>
+                                <p>Appoint judges • Grant pardons</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-fact">
+                        <strong>🎯 Remember:</strong> The system of checks and balances ensures no single branch 
+                        becomes too powerful. Each branch can limit the actions of the other two.
+                    </div>
+                    
+                    <h3>Cabinet Departments (Key Positions)</h3>
+                    <div class="amendment-grid">
+                        <div class="amendment-card">
+                            <h5>Secretary of State</h5>
+                            <p>Deals with foreign affairs and diplomacy</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>Secretary of Treasury</h5>
+                            <p>Manages government finances and money</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>Secretary of Defense</h5>
+                            <p>Oversees military and national defense</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>Attorney General</h5>
+                            <p>Heads Justice Department, chief lawyer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RIGHTS AND DUTIES SECTION -->
+            <div id="rights" class="section">
+                <div class="study-card">
+                    <h2>✊ Rights and Responsibilities</h2>
+                    
+                    <h3>The Bill of Rights (First 10 Amendments)</h3>
+                    <div class="amendment-grid">
+                        <div class="amendment-card">
+                            <h5>1st Amendment</h5>
+                            <p>Freedom of religion, speech, press, assembly, and petition</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>2nd Amendment</h5>
+                            <p>Right to keep and bear arms</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>3rd Amendment</h5>
+                            <p>No quartering soldiers in homes</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>4th Amendment</h5>
+                            <p>Protection from unreasonable searches and seizures</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>5th Amendment</h5>
+                            <p>Due process, no self-incrimination, no double jeopardy</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>6th Amendment</h5>
+                            <p>Right to speedy trial, lawyer, and face accusers</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>7th Amendment</h5>
+                            <p>Right to jury trial in civil cases</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>8th Amendment</h5>
+                            <p>No cruel and unusual punishment or excessive bail</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>9th Amendment</h5>
+                            <p>People have other rights not listed in Constitution</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>10th Amendment</h5>
+                            <p>Powers not given to federal government belong to states</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Important Later Amendments</h3>
+                    <div class="amendment-grid">
+                        <div class="amendment-card">
+                            <h5>13th Amendment (1865)</h5>
+                            <p>Abolished slavery</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>14th Amendment (1868)</h5>
+                            <p>Equal protection and due process for all citizens</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>15th Amendment (1870)</h5>
+                            <p>Voting rights regardless of race</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>19th Amendment (1920)</h5>
+                            <p>Women's right to vote</p>
+                        </div>
+                        <div class="amendment-card">
+                            <h5>26th Amendment (1971)</h5>
+                            <p>Voting age lowered to 18</p>
+                        </div>
+                    </div>
+                    
+                    <div class="visual-box">
+                        <h3>Rights of Citizens</h3>
+                        <div class="infographic">
+                            <div class="info-item">
+                                <h4>Freedom of Expression</h4>
+                                <p>Speak, write, worship as you choose</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Fair Trial</h4>
+                                <p>Due process and legal representation</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Vote</h4>
+                                <p>Choose representatives in elections</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Run for Office</h4>
+                                <p>Seek elected positions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visual-box">
+                        <h3>Responsibilities of Citizens</h3>
+                        <div class="infographic">
+                            <div class="info-item">
+                                <h4>Vote</h4>
+                                <p>Participate in elections</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Serve on Jury</h4>
+                                <p>When called for jury duty</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Obey Laws</h4>
+                                <p>Follow federal, state, and local laws</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Pay Taxes</h4>
+                                <p>Support government services</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Defend Nation</h4>
+                                <p>Serve in military if called</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Stay Informed</h4>
+                                <p>Know about issues and candidates</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-fact">
+                        <strong>💡 Key Concept:</strong> Rights and responsibilities go hand in hand. Citizens have 
+                        freedoms protected by law, but also duties to maintain a functioning democracy.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AMERICAN HISTORY SECTION -->
+            <div id="history" class="section">
+                <div class="study-card">
+                    <h2>📜 American History Essentials</h2>
+                    
+                    <h3>Colonial Period & Revolution</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1620 - Pilgrims Arrive</h4>
+                                <p>Mayflower lands at Plymouth Rock. Pilgrims sought religious freedom.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1776 - Declaration of Independence</h4>
+                                <p>13 colonies declare independence from Britain. Revolutionary War begins.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1783 - Treaty of Paris</h4>
+                                <p>Revolutionary War ends. Britain recognizes American independence.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1787 - Constitutional Convention</h4>
+                                <p>Framers write the Constitution in Philadelphia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>19th Century</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1803 - Louisiana Purchase</h4>
+                                <p>U.S. doubles in size by purchasing land from France.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1861-1865 - Civil War</h4>
+                                <p>War between North and South over slavery and states' rights. Union victory preserves nation.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1863 - Emancipation Proclamation</h4>
+                                <p>President Lincoln declares slaves in rebelling states to be free.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>20th Century Major Events</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1917-1918 - World War I</h4>
+                                <p>U.S. enters war in 1917. Helps Allied powers defeat Central Powers.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1929 - Great Depression</h4>
+                                <p>Stock market crash leads to worst economic crisis in U.S. history.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1941-1945 - World War II</h4>
+                                <p>U.S. enters after Pearl Harbor attack. Helps defeat Axis powers.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1950s-1960s - Civil Rights Movement</h4>
+                                <p>Movement for racial equality. Led by Martin Luther King Jr. and others.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>1991 - Cold War Ends</h4>
+                                <p>Soviet Union dissolves. Decades-long tension with U.S. ends.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visual-box">
+                        <h3>Founding Fathers - Key Figures</h3>
+                        <div class="infographic">
+                            <div class="info-item">
+                                <h4>George Washington</h4>
+                                <p>First President • "Father of our Country" • Led Continental Army</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Thomas Jefferson</h4>
+                                <p>Wrote Declaration • 3rd President • Louisiana Purchase</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Benjamin Franklin</h4>
+                                <p>Diplomat • Inventor • Helped draft Constitution</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>James Madison</h4>
+                                <p>"Father of Constitution" • Wrote Bill of Rights • 4th President</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Alexander Hamilton</h4>
+                                <p>First Treasury Secretary • Founded financial system</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>John Adams</h4>
+                                <p>2nd President • Helped draft Declaration</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-fact">
+                        <strong>🎯 Test Tip:</strong> Know the order of first few presidents: Washington, Adams, 
+                        Jefferson, Madison, Monroe. Also remember key amendments and when they were ratified.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FLASHCARDS SECTION -->
+            <div id="flashcards" class="section">
+                <div class="study-card">
+                    <h2>🎴 Interactive Flashcards</h2>
+                    <p style="margin-bottom: 20px; font-size: 1.1em;">Click any card to flip. Mark cards you know to remove them from the deck!</p>
+                    
+                    <div class="flashcard-stats">
+                        <h3>Progress</h3>
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <h4 id="knownCount">0</h4>
+                                <p>Cards Mastered</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4 id="unknownCount">0</h4>
+                                <p>Cards to Review</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4 id="totalCards">0</h4>
+                                <p>Total Cards</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-container" id="flashcardContainer"></div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button class="btn" onclick="shuffleFlashcards()">🔄 Shuffle Cards</button>
+                        <button class="btn" onclick="showAllCards()">👁️ Show All Cards</button>
+                        <button class="btn" onclick="resetFlashcards()">↩️ Reset Progress</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TEST SECTION -->
+            <div id="test" class="section">
+                <div id="testScoreHistory" style="display: none;">
+                    <div class="study-card">
+                        <h2>📊 Your Test History</h2>
+                        <div id="scoreHistoryContainer"></div>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <button class="btn" onclick="clearHistory()">Clear History</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="testStart" class="start-test-card">
+                    <h2>📝 Ready to Test Your Knowledge?</h2>
+                    <p>
+                        You're about to take an 80-question practice exam based on real FCLE questions. 
+                        The test covers all four areas you've studied. You need 60% (48 correct) to pass.
+                    </p>
+                    <p>
+                        <strong>Tips for success:</strong><br>
+                        • Read each question carefully<br>
+                        • Eliminate obviously wrong answers first<br>
+                        • Trust your preparation<br>
+                        • You can review your answers before submitting
+                    </p>
+                    <button class="btn" onclick="startTest()">Start Practice Test</button>
+                </div>
+                
+                <div id="testQuestions" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar" style="width: 0%">0%</div>
+                    </div>
+                    <div id="questionsContainer"></div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button class="btn" onclick="submitTest()">Submit Test</button>
+                    </div>
+                </div>
+                
+                <div id="testResults" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Memory Storage Management
+        const Storage = {
+            save: (key, value) => {
+                try {
+                    sessionStorage.setItem(key, JSON.stringify(value));
+                } catch (e) {
+                    console.log('Storage not available');
+                }
+            },
+            load: (key) => {
+                try {
+                    const item = sessionStorage.getItem(key);
+                    return item ? JSON.parse(item) : null;
+                } catch (e) {
+                    return null;
+                }
+            },
+            clear: (key) => {
+                try {
+                    sessionStorage.removeItem(key);
+                } catch (e) {
+                    console.log('Storage not available');
+                }
+            }
+        };
+        
+        // Navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+            
+            // Show test history if navigating to test section
+            if (sectionId === 'test') {
+                displayTestHistory();
+            }
+            
+            window.scrollTo(0, 0);
+        }
+        
+        // Flashcards Data
+        const flashcardsData = [
+            {q: "What is the supreme law of the land?", a: "The Constitution"},
+            {q: "What does the Constitution do?", a: "Sets up the government, defines the government, protects basic rights of Americans"},
+            {q: "The idea of self-government is in the first three words of the Constitution. What are these words?", a: "We the People"},
+            {q: "What is an amendment?", a: "A change or addition to the Constitution"},
+            {q: "What do we call the first ten amendments to the Constitution?", a: "The Bill of Rights"},
+            {q: "How many amendments does the Constitution have?", a: "27"},
+            {q: "What did the Declaration of Independence do?", a: "Announced our independence from Great Britain"},
+            {q: "What are two rights in the Declaration of Independence?", a: "Life, liberty, and the pursuit of happiness"},
+            {q: "What is freedom of religion?", a: "You can practice any religion, or not practice a religion"},
+            {q: "What is the economic system in the United States?", a: "Capitalist economy / Market economy"},
+            {q: "What is the 'rule of law'?", a: "Everyone must follow the law. Leaders must obey the law. Government must obey the law. No one is above the law."},
+            {q: "Name one branch of government.", a: "Legislative, Executive, or Judicial"},
+            {q: "What stops one branch of government from becoming too powerful?", a: "Checks and balances / Separation of powers"},
+            {q: "Who is in charge of the executive branch?", a: "The President"},
+            {q: "Who makes federal laws?", a: "Congress (Senate and House of Representatives)"},
+            {q: "What are the two parts of the U.S. Congress?", a: "The Senate and House of Representatives"},
+            {q: "How many U.S. Senators are there?", a: "100"},
+            {q: "We elect a U.S. Senator for how many years?", a: "6 years"},
+            {q: "How many voting members are in the House of Representatives?", a: "435"},
+            {q: "We elect a U.S. Representative for how many years?", a: "2 years"},
+            {q: "We elect a President for how many years?", a: "4 years"},
+            {q: "In what month do we vote for President?", a: "November"},
+            {q: "If the President can no longer serve, who becomes President?", a: "The Vice President"},
+            {q: "Who is the Commander in Chief of the military?", a: "The President"},
+            {q: "Who signs bills to become laws?", a: "The President"},
+            {q: "Who vetoes bills?", a: "The President"},
+            {q: "What does the President's Cabinet do?", a: "Advises the President"},
+            {q: "What are two Cabinet-level positions?", a: "Secretary of State, Secretary of Defense, Attorney General, Secretary of Treasury"},
+            {q: "What does the judicial branch do?", a: "Reviews laws, explains laws, resolves disputes, decides if a law goes against the Constitution"},
+            {q: "What is the highest court in the United States?", a: "The Supreme Court"},
+            {q: "How many justices are on the Supreme Court?", a: "9"},
+            {q: "Who is the current Chief Justice of the United States?", a: "Check current Chief Justice (John Roberts as of knowledge cutoff)"},
+            {q: "What is one right or freedom from the First Amendment?", a: "Speech, religion, assembly, press, petition the government"},
+            {q: "How many amendments does the Constitution have?", a: "27"},
+            {q: "What did the Emancipation Proclamation do?", a: "Freed the slaves in Confederate states"},
+            {q: "What did the 13th Amendment do?", a: "Abolished slavery"},
+            {q: "What did the 14th Amendment do?", a: "Gave citizenship to all persons born in the U.S., equal protection under the law"},
+            {q: "What did the 15th Amendment do?", a: "Gave voting rights to all citizens regardless of race"},
+            {q: "What did the 19th Amendment do?", a: "Gave women the right to vote"},
+            {q: "What is one responsibility that is only for United States citizens?", a: "Serve on a jury / Vote in a federal election"},
+            {q: "What are two rights only for United States citizens?", a: "Vote in federal elections / Run for federal office"},
+            {q: "What are two rights of everyone living in the United States?", a: "Freedom of expression, speech, assembly, petition, religion, bear arms"},
+            {q: "What do we show loyalty to when we say the Pledge of Allegiance?", a: "The United States / The flag"},
+            {q: "What is one promise you make when you become a United States citizen?", a: "Give up loyalty to other countries, defend the Constitution, obey laws, serve in military, serve the nation"},
+            {q: "How old do citizens have to be to vote for President?", a: "18 and older"},
+            {q: "What are two ways that Americans can participate in their democracy?", a: "Vote, join a political party, help with a campaign, join a civic group, give an elected official your opinion, call Senators and Representatives, publicly support or oppose an issue, run for office, write to a newspaper"},
+            {q: "When is the last day you can send in federal income tax forms?", a: "April 15"},
+            {q: "When must all men register for the Selective Service?", a: "At age 18 / Between 18 and 26"},
+            {q: "Who wrote the Declaration of Independence?", a: "Thomas Jefferson"},
+            {q: "When was the Declaration of Independence adopted?", a: "July 4, 1776"},
+            {q: "There were 13 original states. Name three.", a: "New York, New Jersey, Pennsylvania, Massachusetts, Virginia, North Carolina, South Carolina, Georgia, New Hampshire, Rhode Island, Connecticut, Delaware, Maryland"},
+            {q: "What happened at the Constitutional Convention?", a: "The Constitution was written / The Founding Fathers wrote the Constitution"},
+            {q: "When was the Constitution written?", a: "1787"},
+            {q: "Who is the 'Father of Our Country'?", a: "George Washington"},
+            {q: "Who was the first President?", a: "George Washington"},
+            {q: "What territory did the United States buy from France in 1803?", a: "Louisiana / Louisiana Territory"},
+            {q: "Name one war fought by the United States in the 1800s.", a: "War of 1812, Mexican-American War, Civil War, Spanish-American War"},
+            {q: "Name the U.S. war between the North and the South.", a: "The Civil War"},
+            {q: "What was one important thing that Abraham Lincoln did?", a: "Freed the slaves, saved the Union, led during Civil War"},
+            {q: "What did Susan B. Anthony do?", a: "Fought for women's rights / Fought for civil rights"},
+            {q: "Name one war fought by the United States in the 1900s.", a: "World War I, World War II, Korean War, Vietnam War, Gulf War"},
+            {q: "Who was President during World War I?", a: "Woodrow Wilson"},
+            {q: "Who was President during the Great Depression and World War II?", a: "Franklin Roosevelt"},
+            {q: "Who did the United States fight in World War II?", a: "Japan, Germany, and Italy"},
+            {q: "What movement tried to end racial discrimination?", a: "Civil Rights movement"},
+            {q: "What did Martin Luther King, Jr. do?", a: "Fought for civil rights, worked for equality for all Americans"},
+            {q: "What is the capital of the United States?", a: "Washington, D.C."},
+            {q: "Where is the Statue of Liberty?", a: "New York Harbor, Liberty Island, New Jersey, near New York City"},
+            {q: "Why does the flag have 13 stripes?", a: "Because there were 13 original colonies / Because the stripes represent the original colonies"},
+            {q: "Why does the flag have 50 stars?", a: "Because there is one star for each state / Because each star represents a state / Because there are 50 states"},
+            {q: "What is the name of the national anthem?", a: "The Star-Spangled Banner"}
+        ];
+        
+        let knownCards = Storage.load('knownCards') || [];
+        
+        // Initialize flashcards
+        function initFlashcards() {
+            const container = document.getElementById('flashcardContainer');
+            container.innerHTML = '';
+            
+            flashcardsData.forEach((card, index) => {
+                const isKnown = knownCards.includes(index);
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'flashcard' + (isKnown ? ' known' : '');
+                cardDiv.id = `card-${index}`;
+                cardDiv.innerHTML = `
+                    <div class="flashcard-front active" id="front-${index}">
+                        <h4>Question ${index + 1}</h4>
+                        <p>${card.q}</p>
+                        <span class="flip-hint">Click to reveal answer</span>
+                    </div>
+                    <div class="flashcard-back" id="back-${index}">
+                        <h4>Answer</h4>
+                        <p>${card.a}</p>
+                        <div class="flashcard-actions">
+                            <button class="flashcard-btn btn-know" onclick="markCard(${index}, true)">✓ I Know This</button>
+                            <button class="flashcard-btn btn-dont-know" onclick="markCard(${index}, false)">✗ Still Learning</button>
+                        </div>
+                    </div>
+                `;
+                
+                // Add click handler for flipping (not on buttons)
+                const front = cardDiv.querySelector('.flashcard-front');
+                const back = cardDiv.querySelector('.flashcard-back');
+                front.addEventListener('click', () => flipCard(index));
+                back.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('flashcard-btn')) {
+                        flipCard(index);
+                    }
+                });
+                
+                container.appendChild(cardDiv);
+            });
+            
+            updateFlashcardStats();
+        }
+        
+        function flipCard(index) {
+            const front = document.getElementById(`front-${index}`);
+            const back = document.getElementById(`back-${index}`);
+            front.classList.toggle('active');
+            back.classList.toggle('active');
+        }
+        
+        function markCard(index, known) {
+            if (known) {
+                if (!knownCards.includes(index)) {
+                    knownCards.push(index);
+                }
+                const card = document.getElementById(`card-${index}`);
+                card.classList.add('known');
+                setTimeout(() => {
+                    card.classList.add('hidden');
+                    updateFlashcardStats();
+                }, 500);
+            } else {
+                knownCards = knownCards.filter(i => i !== index);
+                const card = document.getElementById(`card-${index}`);
+                card.classList.remove('known');
+                flipCard(index); // Flip back to question
+            }
+            
+            Storage.save('knownCards', knownCards);
+            updateFlashcardStats();
+        }
+        
+        function updateFlashcardStats() {
+            const known = knownCards.length;
+            const total = flashcardsData.length;
+            const unknown = total - known;
+            
+            document.getElementById('knownCount').textContent = known;
+            document.getElementById('unknownCount').textContent = unknown;
+            document.getElementById('totalCards').textContent = total;
+        }
+        
+        function shuffleFlashcards() {
+            for (let i = flashcardsData.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [flashcardsData[i], flashcardsData[j]] = [flashcardsData[j], flashcardsData[i]];
+            }
+            initFlashcards();
+        }
+        
+        function showAllCards() {
+            document.querySelectorAll('.flashcard').forEach(card => {
+                card.classList.remove('hidden');
+            });
+        }
+        
+        function resetFlashcards() {
+            if (confirm('Are you sure you want to reset all flashcard progress?')) {
+                knownCards = [];
+                Storage.clear('knownCards');
+                initFlashcards();
+            }
+        }
+        
+        // Test Questions (80 questions based on FCLE)
+        const testQuestions = [
+            {q: "What is the supreme law of the land?", opts: ["The Constitution", "The Bill of Rights", "The Declaration of Independence", "Federal law"], ans: 0},
+            {q: "What does the Constitution do?", opts: ["Sets up and defines the government", "Creates state governments", "Establishes the military", "All of the above"], ans: 0},
+            {q: "The idea of self-government is in the first three words of the Constitution. What are these words?", opts: ["We the People", "All men created", "For the People", "By the People"], ans: 0},
+            {q: "What is an amendment?", opts: ["A change to the Constitution", "A new law", "A court decision", "A presidential order"], ans: 0},
+            {q: "What do we call the first ten amendments to the Constitution?", opts: ["The Bill of Rights", "The Amendments", "The Constitution", "The Articles"], ans: 0},
+            {q: "What is one right or freedom from the First Amendment?", opts: ["Speech", "Vote", "Bear arms", "Education"], ans: 0},
+            {q: "How many amendments does the Constitution have?", opts: ["27", "10", "25", "33"], ans: 0},
+            {q: "What did the Declaration of Independence do?", opts: ["Announced independence from Great Britain", "Created the Constitution", "Ended slavery", "Started the Civil War"], ans: 0},
+            {q: "What are two rights in the Declaration of Independence?", opts: ["Life and liberty", "Vote and work", "Religion and speech", "Education and health"], ans: 0},
+            {q: "What is freedom of religion?", opts: ["You can practice any religion or not practice a religion", "Everyone must be Christian", "Only one religion allowed", "Religion is banned"], ans: 0},
+            {q: "What is the economic system in the United States?", opts: ["Capitalist economy", "Socialist economy", "Communist economy", "Feudal economy"], ans: 0},
+            {q: "What is the 'rule of law'?", opts: ["Everyone must follow the law", "Only citizens follow laws", "Laws apply to some people", "Laws can be ignored"], ans: 0},
+            {q: "Name one branch or part of the government.", opts: ["Legislative", "Federal", "State", "Municipal"], ans: 0},
+            {q: "What stops one branch of government from becoming too powerful?", opts: ["Checks and balances", "The President", "The people", "The military"], ans: 0},
+            {q: "Who is in charge of the executive branch?", opts: ["The President", "Congress", "Supreme Court", "Vice President"], ans: 0},
+            {q: "Who makes federal laws?", opts: ["Congress", "The President", "The Supreme Court", "The Cabinet"], ans: 0},
+            {q: "What are the two parts of the U.S. Congress?", opts: ["Senate and House of Representatives", "President and Vice President", "House and Cabinet", "Senate and President"], ans: 0},
+            {q: "How many U.S. Senators are there?", opts: ["100", "50", "435", "200"], ans: 0},
+            {q: "We elect a U.S. Senator for how many years?", opts: ["6", "2", "4", "8"], ans: 0},
+            {q: "Who is one of your state's U.S. Senators now?", opts: ["Check your state's senators", "The President", "Your governor", "Your mayor"], ans: 0},
+            {q: "The House of Representatives has how many voting members?", opts: ["435", "100", "50", "200"], ans: 0},
+            {q: "We elect a U.S. Representative for how many years?", opts: ["2", "4", "6", "8"], ans: 0},
+            {q: "Why do some states have more Representatives than other states?", opts: ["Because of the state's population", "Because they're bigger", "Because they're older", "Because they have more money"], ans: 0},
+            {q: "We elect a President for how many years?", opts: ["4", "2", "6", "8"], ans: 0},
+            {q: "In what month do we vote for President?", opts: ["November", "January", "October", "December"], ans: 0},
+            {q: "If the President can no longer serve, who becomes President?", opts: ["The Vice President", "Speaker of the House", "Secretary of State", "Chief Justice"], ans: 0},
+            {q: "If both the President and the Vice President can no longer serve, who becomes President?", opts: ["Speaker of the House", "Secretary of State", "President Pro Tempore", "Chief Justice"], ans: 0},
+            {q: "Who is the Commander in Chief of the military?", opts: ["The President", "Secretary of Defense", "Chairman of Joint Chiefs", "Vice President"], ans: 0},
+            {q: "Who signs bills to become laws?", opts: ["The President", "Congress", "Supreme Court", "Vice President"], ans: 0},
+            {q: "Who vetoes bills?", opts: ["The President", "Congress", "Supreme Court", "The people"], ans: 0},
+            {q: "What does the President's Cabinet do?", opts: ["Advises the President", "Makes laws", "Interprets laws", "Commands military"], ans: 0},
+            {q: "What are two Cabinet-level positions?", opts: ["Secretary of State and Secretary of Defense", "President and Vice President", "Senator and Representative", "Judge and Lawyer"], ans: 0},
+            {q: "What does the judicial branch do?", opts: ["Reviews and explains laws", "Makes laws", "Enforces laws", "Vetoes laws"], ans: 0},
+            {q: "What is the highest court in the United States?", opts: ["The Supreme Court", "Federal Court", "District Court", "Appeals Court"], ans: 0},
+            {q: "How many justices are on the Supreme Court?", opts: ["9", "7", "12", "5"], ans: 0},
+            {q: "Under our Constitution, some powers belong to the federal government. What is one power of the federal government?", opts: ["To print money", "To provide schooling", "To provide police", "Issue driver's licenses"], ans: 0},
+            {q: "Under our Constitution, some powers belong to the states. What is one power of the states?", opts: ["Provide schooling and education", "Print money", "Declare war", "Make treaties"], ans: 0},
+            {q: "Who is the Governor of your state now?", opts: ["Check your state's governor", "The President", "Your senator", "Your mayor"], ans: 0},
+            {q: "What is the capital of your state?", opts: ["Check your state capital", "Washington DC", "New York", "Your hometown"], ans: 0},
+            {q: "What are the two major political parties in the United States?", opts: ["Democratic and Republican", "Liberal and Conservative", "Left and Right", "Progressive and Traditional"], ans: 0},
+            {q: "What is the political party of the President now?", opts: ["Check current president's party", "Always Democrat", "Always Republican", "Independent"], ans: 0},
+            {q: "There are four amendments to the Constitution about who can vote. Describe one of them.", opts: ["Citizens 18 and older can vote", "Only men can vote", "Only property owners can vote", "Everyone must vote"], ans: 0},
+            {q: "What is one responsibility that is only for United States citizens?", opts: ["Serve on a jury", "Pay taxes", "Obey laws", "Get a job"], ans: 0},
+            {q: "Name one right only for United States citizens.", opts: ["Vote in federal elections", "Freedom of speech", "Own property", "Get a job"], ans: 0},
+            {q: "What are two rights of everyone living in the United States?", opts: ["Freedom of expression and speech", "Vote and run for office", "Serve on jury", "Pay taxes"], ans: 0},
+            {q: "What do we show loyalty to when we say the Pledge of Allegiance?", opts: ["The United States", "The President", "The flag only", "The military"], ans: 0},
+            {q: "What is one promise you make when you become a United States citizen?", opts: ["Obey the laws of the United States", "Never leave the country", "Serve in military forever", "Never vote"], ans: 0},
+            {q: "How old do citizens have to be to vote for President?", opts: ["18 and older", "21 and older", "16 and older", "25 and older"], ans: 0},
+            {q: "What are two ways that Americans can participate in their democracy?", opts: ["Vote and join political party", "Pay taxes and work", "Obey laws only", "Join military"], ans: 0},
+            {q: "When is the last day you can send in federal income tax forms?", opts: ["April 15", "December 31", "January 1", "July 4"], ans: 0},
+            {q: "When must all men register for the Selective Service?", opts: ["At age 18", "At age 21", "At age 16", "At age 25"], ans: 0},
+            {q: "What is one reason colonists came to America?", opts: ["Freedom", "Gold", "Fame", "Adventure"], ans: 0},
+            {q: "Who lived in America before the Europeans arrived?", opts: ["Native Americans", "Africans", "Asians", "Europeans"], ans: 0},
+            {q: "What group of people was taken to America and sold as slaves?", opts: ["Africans", "Asians", "Europeans", "Native Americans"], ans: 0},
+            {q: "Why did the colonists fight the British?", opts: ["High taxes", "Religious freedom", "Land disputes", "Trade issues"], ans: 0},
+            {q: "Who wrote the Declaration of Independence?", opts: ["Thomas Jefferson", "George Washington", "Benjamin Franklin", "John Adams"], ans: 0},
+            {q: "When was the Declaration of Independence adopted?", opts: ["July 4, 1776", "July 4, 1787", "July 4, 1791", "July 4, 1800"], ans: 0},
+            {q: "There were 13 original states. Name three.", opts: ["New York, Virginia, Massachusetts", "Texas, California, Florida", "Alaska, Hawaii, Oregon", "All of the above"], ans: 0},
+            {q: "What happened at the Constitutional Convention?", opts: ["The Constitution was written", "Declaration of Independence signed", "Bill of Rights created", "Civil War started"], ans: 0},
+            {q: "When was the Constitution written?", opts: ["1787", "1776", "1791", "1800"], ans: 0},
+            {q: "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.", opts: ["James Madison", "Thomas Jefferson", "George Washington", "Benjamin Franklin"], ans: 0},
+            {q: "What is one thing Benjamin Franklin is famous for?", opts: ["U.S. diplomat", "First President", "Wrote Constitution", "Led Continental Army"], ans: 0},
+            {q: "Who is the 'Father of Our Country'?", opts: ["George Washington", "Thomas Jefferson", "Benjamin Franklin", "John Adams"], ans: 0},
+            {q: "Who was the first President?", opts: ["George Washington", "John Adams", "Thomas Jefferson", "James Madison"], ans: 0},
+            {q: "What territory did the United States buy from France in 1803?", opts: ["Louisiana Territory", "Texas", "Alaska", "Florida"], ans: 0},
+            {q: "Name one war fought by the United States in the 1800s.", opts: ["Civil War", "World War I", "World War II", "Korean War"], ans: 0},
+            {q: "Name the U.S. war between the North and the South.", opts: ["Civil War", "Revolutionary War", "War of 1812", "Mexican War"], ans: 0},
+            {q: "Name one problem that led to the Civil War.", opts: ["Slavery", "Taxes", "Trade", "Religion"], ans: 0},
+            {q: "What was one important thing that Abraham Lincoln did?", opts: ["Freed the slaves", "Wrote Constitution", "First President", "Bought Louisiana"], ans: 0},
+            {q: "What did the Emancipation Proclamation do?", opts: ["Freed slaves in Confederate states", "Ended Civil War", "Gave women vote", "Created Constitution"], ans: 0},
+            {q: "What did Susan B. Anthony do?", opts: ["Fought for women's rights", "Freed slaves", "First female President", "Wrote Constitution"], ans: 0},
+            {q: "Name one war fought by the United States in the 1900s.", opts: ["World War I", "Civil War", "Revolutionary War", "War of 1812"], ans: 0},
+            {q: "Who was President during World War I?", opts: ["Woodrow Wilson", "Theodore Roosevelt", "Franklin Roosevelt", "Harry Truman"], ans: 0},
+            {q: "Who was President during the Great Depression and World War II?", opts: ["Franklin Roosevelt", "Woodrow Wilson", "Harry Truman", "Dwight Eisenhower"], ans: 0},
+            {q: "Who did the United States fight in World War II?", opts: ["Japan, Germany, and Italy", "Soviet Union", "China", "England"], ans: 0},
+            {q: "What movement tried to end racial discrimination?", opts: ["Civil Rights movement", "Labor movement", "Women's movement", "Immigration movement"], ans: 0},
+            {q: "What did Martin Luther King, Jr. do?", opts: ["Fought for civil rights", "Freed slaves", "First black President", "Wrote Constitution"], ans: 0},
+            {q: "What is the capital of the United States?", opts: ["Washington, D.C.", "New York", "Philadelphia", "Boston"], ans: 0},
+            {q: "Where is the Statue of Liberty?", opts: ["New York Harbor", "Washington DC", "Philadelphia", "Boston"], ans: 0},
+            {q: "Why does the flag have 13 stripes?", opts: ["13 original colonies", "13 Founding Fathers", "13 amendments", "13 states"], ans: 0}
+        ];
+        
+        let userAnswers = [];
+        let testHistory = Storage.load('testHistory') || [];
+        
+        function startTest() {
+            document.getElementById('testStart').style.display = 'none';
+            document.getElementById('testScoreHistory').style.display = 'none';
+            document.getElementById('testQuestions').style.display = 'block';
+            document.getElementById('testResults').style.display = 'none';
+            
+            userAnswers = new Array(testQuestions.length).fill(-1);
+            
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+            
+            testQuestions.forEach((q, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'question';
+                qDiv.innerHTML = `
+                    <h3>Question ${index + 1}</h3>
+                    <p style="font-size: 1.1em; margin-bottom: 20px;">${q.q}</p>
+                    <ul class="options">
+                        ${q.opts.map((opt, i) => `
+                            <li onclick="selectAnswer(${index}, ${i})" id="q${index}opt${i}">${opt}</li>
+                        `).join('')}
+                    </ul>
+                `;
+                container.appendChild(qDiv);
+            });
+            
+            updateProgress();
+        }
+        
+        function selectAnswer(qIndex, optIndex) {
+            // Clear previous selection
+            for (let i = 0; i < testQuestions[qIndex].opts.length; i++) {
+                const opt = document.getElementById(`q${qIndex}opt${i}`);
+                if (opt) opt.classList.remove('selected');
+            }
+            
+            // Select new option
+            const selected = document.getElementById(`q${qIndex}opt${optIndex}`);
+            if (selected) selected.classList.add('selected');
+            
+            userAnswers[qIndex] = optIndex;
+            updateProgress();
+        }
+        
+        function updateProgress() {
+            const answered = userAnswers.filter(a => a !== -1).length;
+            const percent = Math.round((answered / testQuestions.length) * 100);
+            const bar = document.getElementById('progressBar');
+            if (bar) {
+                bar.style.width = percent + '%';
+                bar.textContent = `${answered}/${testQuestions.length} answered (${percent}%)`;
+            }
+        }
+        
+        function submitTest() {
+            const unanswered = userAnswers.filter(a => a === -1).length;
+            if (unanswered > 0) {
+                if (!confirm(`You have ${unanswered} unanswered questions. Submit anyway?`)) {
+                    return;
+                }
+            }
+            
+            let correct = 0;
+            testQuestions.forEach((q, index) => {
+                if (userAnswers[index] === q.ans) {
+                    correct++;
+                }
+                
+                // Show results on questions
+                for (let i = 0; i < q.opts.length; i++) {
+                    const opt = document.getElementById(`q${index}opt${i}`);
+                    if (!opt) continue;
+                    
+                    opt.style.pointerEvents = 'none';
+                    opt.style.cursor = 'default';
+                    if (i === q.ans) {
+                        opt.classList.add('correct');
+                    } else if (i === userAnswers[index] && userAnswers[index] !== q.ans) {
+                        opt.classList.add('incorrect');
+                    }
+                }
+            });
+            
+            const percent = Math.round((correct / testQuestions.length) * 100);
+            const passed = percent >= 60;
+            
+            // Save to history
+            const testResult = {
+                date: new Date().toLocaleString(),
+                score: correct,
+                total: testQuestions.length,
+                percent: percent,
+                passed: passed
+            };
+            testHistory.push(testResult);
+            Storage.save('testHistory', testHistory);
+            
+            // Show results
+            document.getElementById('testQuestions').style.display = 'none';
+            const results = document.getElementById('testResults');
+            results.style.display = 'block';
+            results.innerHTML = `
+                <div class="score-display">
+                    <h2>${passed ? '🎉 Congratulations!' : '📚 Keep Studying!'}</h2>
+                    <h3>You scored ${correct} out of ${testQuestions.length}</h3>
+                    <h2>${percent}%</h2>
+                    <p style="font-size: 1.2em; margin-top: 20px;">
+                        ${passed ? 'You passed! You\'re ready for the real FCLE!' : 'You need 60% to pass. Review the materials and try again!'}
+                    </p>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" onclick="reviewAnswers()">Review Answers</button>
+                    <button class="btn" onclick="retakeTest()">Retake Test</button>
+                    <button class="btn" onclick="viewHistory()">View History</button>
+                    <button class="btn" onclick="backToStudy()">Back to Study</button>
+                </div>
+            `;
+            
+            window.scrollTo(0, 0);
+        }
+        
+        function reviewAnswers() {
+            document.getElementById('testResults').style.display = 'none';
+            document.getElementById('testQuestions').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+        
+        function retakeTest() {
+            resetTest();
+            startTest();
+        }
+        
+        function resetTest() {
+            document.getElementById('testResults').style.display = 'none';
+            document.getElementById('testQuestions').style.display = 'none';
+            document.getElementById('testStart').style.display = 'block';
+            document.getElementById('testScoreHistory').style.display = 'none';
+            userAnswers = [];
+        }
+        
+        function backToStudy() {
+            resetTest();
+            showSection('overview');
+        }
+        
+        function viewHistory() {
+            document.getElementById('testResults').style.display = 'none';
+            displayTestHistory();
+        }
+        
+        function displayTestHistory() {
+            const history = Storage.load('testHistory') || [];
+            const historySection = document.getElementById('testScoreHistory');
+            const container = document.getElementById('scoreHistoryContainer');
+            
+            if (history.length === 0) {
+                historySection.style.display = 'none';
+                document.getElementById('testStart').style.display = 'block';
+                return;
+            }
+            
+            historySection.style.display = 'block';
+            document.getElementById('testStart').style.display = 'block';
+            
+            let html = '<div class="visual-box" style="max-height: 400px; overflow-y: auto;">';
+            history.reverse().forEach((test, index) => {
+                const actualIndex = history.length - 1 - index;
+                html += `
+                    <div style="background: white; padding: 20px; margin: 10px 0; border-radius: 10px; border-left: 5px solid ${test.passed ? '#28a745' : '#dc3545'};">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                            <div>
+                                <h4 style="color: #1e3c72; margin-bottom: 5px;">Test #${actualIndex + 1}</h4>
+                                <p style="color: #666; font-size: 0.9em;">${test.date}</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <h3 style="color: ${test.passed ? '#28a745' : '#dc3545'}; margin-bottom: 5px;">${test.percent}%</h3>
+                                <p style="color: #666;">${test.score}/${test.total} correct</p>
+                                <p style="font-weight: bold; color: ${test.passed ? '#28a745' : '#dc3545'};">${test.passed ? '✓ PASSED' : '✗ FAILED'}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+        
+        function clearHistory() {
+            if (confirm('Are you sure you want to clear all test history?')) {
+                testHistory = [];
+                Storage.clear('testHistory');
+                displayTestHistory();
+            }
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initFlashcards();
+        });
+    </script>
+</body>
+</html>
